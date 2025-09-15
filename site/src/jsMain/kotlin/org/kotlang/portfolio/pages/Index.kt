@@ -1,26 +1,31 @@
 package org.kotlang.portfolio.pages
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.flexGrow
 import com.varabyte.kobweb.core.Page
-import org.jetbrains.compose.web.css.vh
-import org.jetbrains.compose.web.dom.Text
-import com.varabyte.kobweb.worker.rememberWorker
-import org.kotlang.portfolio.worker.EchoWorker
+import com.varabyte.kobweb.silk.components.text.SpanText
+import org.kotlang.portfolio.components.PageLayout
+import org.kotlang.portfolio.sections.AboutMeSection
+import org.kotlang.portfolio.sections.ContactSection
+import org.kotlang.portfolio.sections.HeroSection
+import org.kotlang.portfolio.sections.HomePageHeader
+import org.kotlang.portfolio.sections.ProjectsSection
 
 @Page
 @Composable
 fun HomePage() {
-    val worker = rememberWorker { EchoWorker { output -> console.log("Echoed: $output") } }
-    LaunchedEffect(Unit) {
-        worker.postInput("Hello, worker!")
-    }
-
-    // TODO: Replace the following with your own content
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("THIS PAGE INTENTIONALLY LEFT BLANK")
+    PageLayout(
+        header = { HomePageHeader() }
+    ) {
+        Column(modifier = Modifier.flexGrow(1)) {
+            HeroSection()
+            AboutMeSection()
+            ProjectsSection()
+            ContactSection()
+        }
     }
 }
