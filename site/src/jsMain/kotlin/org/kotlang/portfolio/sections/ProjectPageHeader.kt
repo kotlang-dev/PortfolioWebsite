@@ -1,63 +1,66 @@
 package org.kotlang.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Colors
-import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.forms.Button
-import com.varabyte.kobweb.silk.components.icons.fa.*
+import com.varabyte.kobweb.compose.ui.modifiers.color
+import com.varabyte.kobweb.silk.components.icons.fa.FaArrowLeft
+import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
+import com.varabyte.kobweb.silk.components.icons.fa.FaGooglePlay
 import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.theme.SilkTheme
+import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.Position
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.kotlang.portfolio.theme.ProjectNavigationLinkStyle
+import org.kotlang.portfolio.theme.toPortfolioPalette
 
 @Composable
-fun ProjectPageHeader(githubLink: String, playStoreLink: String? = null) {
-    val palette = SilkTheme.palette
-    val colorMode = ColorMode.current
+fun ProjectPageHeader(
+    githubLink: String,
+    playStoreLink: String? = null
+) {
+    val palette = ColorMode.current.toPortfolioPalette()
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(leftRight = 10.percent, topBottom = 16.px)
-            .position(Position.Sticky)
-            .top(0.px)
-            .backgroundColor(Colors.Gray)
-            .zIndex(1),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Link(path = "/", modifier = Modifier.textDecorationLine(TextDecorationLine.None)) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.px)) {
-                FaArrowLeft()
-                com.varabyte.kobweb.silk.components.text.SpanText("Back to Portfolio")
-            }
-        }
-
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.px)) {
-            Link(path = githubLink, modifier = Modifier.textDecorationLine(TextDecorationLine.None)) {
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.px)) {
-                    FaGithub()
-                    com.varabyte.kobweb.silk.components.text.SpanText("View on Github")
+    BaseHeader(
+        leftContent = {
+            Link(path = "/", modifier = ProjectNavigationLinkStyle.toModifier().color(palette.text)) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.px)
+                ) {
+                    FaArrowLeft()
+                    SpanText("Back to Portfolio")
                 }
             }
-            if (playStoreLink != null) {
-                Link(path = playStoreLink, modifier = Modifier.textDecorationLine(TextDecorationLine.None)) {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.px)) {
-                        FaGooglePlay()
-                        com.varabyte.kobweb.silk.components.text.SpanText("Get on Play Store")
+        },
+        rightContent = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.px)
+            ) {
+                Link(path = githubLink, modifier = ProjectNavigationLinkStyle.toModifier().color(palette.text)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.px)
+                    ) {
+                        FaGithub()
+                        SpanText("View on Github")
+                    }
+                }
+                if (playStoreLink != null) {
+                    Link(path = playStoreLink, modifier = ProjectNavigationLinkStyle.toModifier().color(palette.text)) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.px)
+                        ) {
+                            FaGooglePlay()
+                            SpanText("Get on Play Store")
+                        }
                     }
                 }
             }
-            Button(onClick = {  }, modifier = Modifier.borderRadius(50.percent).padding(0.px)) {
-                if (colorMode.isLight) FaMoon() else FaSun()
-            }
         }
-    }
+    )
 }

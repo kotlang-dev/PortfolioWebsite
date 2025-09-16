@@ -15,7 +15,6 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.SilkTheme
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import org.kotlang.portfolio.theme.AppColors
 
 @Composable
 fun AboutMeSection() {
