@@ -1,11 +1,9 @@
 package org.kotlang.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.Cursor
-import com.varabyte.kobweb.compose.css.FontStyle
-import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -20,98 +18,93 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.widgets.SocialBar
 import org.kotlang.portfolio.models.HomeSection
-import org.kotlang.portfolio.theme.MainButtonStyle
+import org.kotlang.portfolio.style.HeroDescriptionStyle
+import org.kotlang.portfolio.style.HeroHeadlineStyle
+import org.kotlang.portfolio.style.HeroIntroStyle
+import org.kotlang.portfolio.style.HeroSubtitleStyle
 import org.kotlang.portfolio.theme.ProfileImageStyle
-import org.kotlang.portfolio.theme.toPortfolioPalette
 import org.kotlang.portfolio.util.Res
 
 @OptIn(DelicateApi::class)
 @Composable
 fun HeroSection() {
     val breakpoint = rememberBreakpoint()
-    Column(
+    Box(
         modifier = Modifier
             .id(HomeSection.Home.id)
             .fillMaxWidth()
-            .padding(topBottom = 60.px),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(24.px) // Adds space between each item
+            .padding(topBottom = 100.px),
+        contentAlignment = Alignment.Center
     ) {
-        Row {
-            if (breakpoint > Breakpoint.MD) {
-                SocialBar()
+        if (breakpoint > Breakpoint.MD) {
+            // Desktop Layout
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row {
+                    SocialBar()
+                    MainContent()
+                }
+                ProfileImage()
             }
-            MainText(breakpoint = breakpoint)
-            Image(
-                src = Res.Image.profile,
-                alt = "Mohammad Arif Profile Picture",
-                modifier = ProfileImageStyle.toModifier().size(150.px)
-            )
+        } else {
+            // Mobile Layout
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(40.px)
+            ) {
+                ProfileImage()
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    MainContent()
+                }
+                SocialBar(isRow = true)
+            }
         }
     }
 }
 
 @Composable
-fun MainText(breakpoint: Breakpoint) {
-    val font = "Roboto"
-    val palette = ColorMode.current.toPortfolioPalette()
-    Column {
+private fun ProfileImage() {
+    Image(
+        src = Res.Image.profile,
+        alt = "Mohammad Arif Profile Picture",
+        modifier = ProfileImageStyle.toModifier().size(250.px)
+    )
+}
+
+@Composable
+private fun MainContent() {
+    Column(modifier = Modifier.margin(leftRight = 24.px)) {
         SpanText(
             text = "Hello, I'm",
-            modifier = Modifier
-                .margin(topBottom = 0.px)
-                .fontFamily(font)
-                .fontSize(if (breakpoint >= Breakpoint.LG) 45.px else 20.px)
-                .fontWeight(FontWeight.Normal)
-                .color(palette.primary)
+            modifier = HeroIntroStyle.toModifier()
         )
         SpanText(
             text = "Mohammad Arif",
-            modifier = Modifier
-                .margin(top = 20.px, bottom = 0.px)
-                .fontFamily(font)
-                .fontSize(if (breakpoint >= Breakpoint.LG) 68.px else 40.px)
-                .fontWeight(FontWeight.Bolder)
-                .color(palette.text)
+            modifier = HeroHeadlineStyle.toModifier()
         )
         SpanText(
             text = "Android Developer | Kotlin Multiplatform Enthusiast",
-            modifier = Modifier
-                .margin(top = 10.px, bottom = 5.px)
-                .fontFamily(font)
-                .fontSize(20.px)
-                .fontWeight(FontWeight.Bold)
-                .color(palette.text)
+            modifier = HeroSubtitleStyle.toModifier()
         )
         SpanText(
             text = "I'm an Android developer with two years of experience, specializing in building modern, user-centric applications. I also run a YouTube channel where I share tutorials to help other developers grow their skills.",
-            modifier = Modifier
-                .margin(bottom = 25.px)
-                .maxWidth(400.px)
-                .fontFamily(font)
-                .fontSize(15.px)
-                .fontStyle(FontStyle.Italic)
-                .fontWeight(FontWeight.Normal)
-                .color(palette.text)
+            modifier = HeroDescriptionStyle.toModifier()
         )
         Button(
-            onClick = {},
-            modifier = MainButtonStyle.toModifier()
-                .height(40.px)
-                .border(width = 0.px)
-                .borderRadius(r = 5.px)
-                .backgroundColor(palette.primary)
-                .color(Colors.White)
-                .cursor(Cursor.Pointer)
+            onClick = {}
         ) {
             Link(
-                modifier = Modifier
-                    .color(Colors.White)
-                    .textDecorationLine(TextDecorationLine.None),
+                modifier = Modifier.color(Colors.White).textDecorationLine(TextDecorationLine.None),
                 text = "Hire me",
                 path = HomeSection.Contact.path
             )

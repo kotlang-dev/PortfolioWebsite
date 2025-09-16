@@ -47,7 +47,7 @@ fun HomePageHeader() {
                         Link(
                             path = section.path,
                             text = section.title,
-                            modifier = MainNavigationLinkStyle.toModifier().color(palette.text)
+                            modifier = MainNavigationLinkStyle.toModifier()
                         )
                     }
                 } else {

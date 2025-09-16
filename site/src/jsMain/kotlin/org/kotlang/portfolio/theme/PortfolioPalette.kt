@@ -20,7 +20,7 @@ object PortfolioPalettes {
     val light = PortfolioPalette(
         background = Colors.WhiteSmoke, //Color.rgb(0xFFFFFF),
         surface = Color.rgb(0xF8F9FA),
-        header = Color.rgb(0xFFFFFF),
+        header = Colors.White.copyf(alpha = 0.85f),
         primary = Color.rgb(0x059669),
         text = Colors.Black.lightened(0.2f) //Color.rgb(0x18181B)
     )
@@ -28,7 +28,7 @@ object PortfolioPalettes {
     val dark = PortfolioPalette(
         background = Color.rgb(15, 15, 25), //Color.rgb(0x18181B),
         surface = Color.rgb(0x202023),
-        header = Color.rgb(0x1D1D20),
+        header = Colors.Black.copyf(alpha = 0.85f),
         primary = Color.rgb(0x34D399),
         text = Colors.White.darkened(0.1f) //Color.rgb(0xFFFFFF)
     )

@@ -1,7 +1,9 @@
 package org.kotlang.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -13,88 +15,48 @@ import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
+import org.kotlang.portfolio.models.SocialLink
+import org.kotlang.portfolio.theme.SocialBarBackdropStyle
 import org.kotlang.portfolio.theme.SocialLinkStyle
 
 @Composable
-fun SocialBar(row: Boolean = false) {
-    if (row) {
+fun SocialBar(isRow: Boolean = false) {
+    val socials = SocialLink.entries
+
+    if (isRow) {
         Row(
-            modifier = Modifier
+            modifier = SocialBarBackdropStyle.toModifier()
                 .margin(top = 25.px)
                 .padding(leftRight = 25.px)
-                .minHeight(40.px)
-                .borderRadius(r = 20.px)
-                .backgroundColor(Colors.White),
+                .minHeight(40.px),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.spacedBy(24.px)
         ) {
-            SocialLinks(row = true)
+            socials.forEach { social -> SocialLink(social) }
         }
     } else {
         Column(
-            modifier = Modifier
+            modifier = SocialBarBackdropStyle.toModifier()
                 .margin(right = 25.px)
-                .padding(topBottom = 25.px)
-                .minWidth(40.px)
-                .borderRadius(r = 20.px)
-                .backgroundColor(Colors.White),
-            verticalArrangement = Arrangement.Center,
+                .padding(topBottom = 30.px)
+                .minWidth(40.px),
+            verticalArrangement = Arrangement.spacedBy(40.px),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            SocialLinks()
+            socials.forEach { social -> SocialLink(social) }
         }
     }
 }
 
 @Composable
-private fun SocialLinks(row: Boolean = false) {
-    val link = ""
+private fun SocialLink(social: SocialLink) {
     Link(
-        path = link,
-        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
+        path = social.url,
+        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
+        modifier = Modifier.textDecorationLine(TextDecorationLine.None),
     ) {
-        FaFacebook(
-            modifier = SocialLinkStyle.toModifier()
-                .margin(
-                    bottom = if (row) 0.px else 40.px,
-                    right = if (row) 40.px else 0.px
-                ),
-            size = IconSize.LG
-        )
-    }
-    Link(
-        path = link,
-        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-    ) {
-        FaTwitter(
-            modifier = SocialLinkStyle.toModifier()
-                .margin(
-                    bottom = if (row) 0.px else 40.px,
-                    right = if (row) 40.px else 0.px
-                ),
-            size = IconSize.LG
-        )
-    }
-    Link(
-        path = link,
-        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-    ) {
-        FaInstagram(
-            modifier = SocialLinkStyle.toModifier()
-                .margin(
-                    bottom = if (row) 0.px else 40.px,
-                    right = if (row) 40.px else 0.px
-                ),
-            size = IconSize.LG
-        )
-    }
-    Link(
-        path = link,
-        openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB
-    ) {
-        FaLinkedin(
-            modifier = SocialLinkStyle.toModifier(),
-            size = IconSize.LG
-        )
+        Box(SocialLinkStyle.toModifier().color(social.brandColor)) {
+            social.icon(IconSize.LG)
+        }
     }
 }
