@@ -72,12 +72,9 @@ jobs:
           ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: site
           path: site/.kobweb/site/
-          if-no-files-found: error
-          retention-days: 1
 
   deploy:
     environment:
