@@ -54,7 +54,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ steps.browser-cache-id.outputs.value }}
 
-      - name: Fetch kobweb
+      - name: Fetch kobweb CLI
         uses: robinraju/release-downloader@v1.9
         with:
           repository: "varabyte/kobweb-cli"
@@ -63,20 +63,15 @@ jobs:
           tarBall: false
           zipBall: false
 
-      - name: Unzip kobweb
+      - name: Unzip kobweb CLI
         run: unzip kobweb-${{ env.KOBWEB_CLI_VERSION }}.zip
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./site/.kobweb/site
 
       - name: Run export
         run: |
           cd site
           ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
-      - name: Upload site
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: site
