@@ -5,7 +5,7 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
 
   workflow_dispatch:
 
@@ -42,13 +42,10 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew kobwebExport --no-daemon
 
-      - name: List files in workspace
-        run: ls -R
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site/build/kobweb/site
+          path: ./site/.kobweb/site
 
   deploy:
     environment:
