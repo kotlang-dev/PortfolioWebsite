@@ -22,8 +22,8 @@ fun HomePage() {
                 .maxWidth(1200.px)
         ) {
             HeroSection()
-            AboutMeSection()
             ProjectsSection()
+            CoursesSection()
             ContactSection()
         }
     }

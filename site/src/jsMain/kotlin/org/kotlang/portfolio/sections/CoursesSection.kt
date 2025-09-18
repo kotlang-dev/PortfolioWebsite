@@ -20,10 +20,10 @@ import org.kotlang.portfolio.theme.CardGridStyle
 import org.kotlang.portfolio.theme.SectionContainerStyle
 
 @Composable
-fun ProjectsSection() {
+fun CoursesSection() {
     Box(
         modifier = Modifier
-            .id(HomeSection.Projects.id)
+            .id(HomeSection.Courses.id)
             .fillMaxWidth()
             .padding(topBottom = 80.px),
         contentAlignment = Alignment.Center
@@ -31,12 +31,12 @@ fun ProjectsSection() {
         Column(
             modifier = SectionContainerStyle.toModifier().gap(60.px),
             horizontalAlignment = Alignment.CenterHorizontally
-        )  {
-            SectionTitle(section = HomeSection.Projects)
+        ) {
+            SectionTitle(section = HomeSection.Courses)
 
             Row(modifier = CardGridStyle.toModifier()) {
-                PortfolioData.projects.forEach { project ->
-                    PortfolioCard(item = project)
+                PortfolioData.courses.forEach { course ->
+                    PortfolioCard(item = course)
                 }
             }
         }

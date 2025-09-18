@@ -1,17 +1,14 @@
 package org.kotlang.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.framework.annotations.DelicateApi
-import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.text.SpanText
@@ -25,6 +22,7 @@ import org.kotlang.portfolio.style.HeroDescriptionStyle
 import org.kotlang.portfolio.style.HeroHeadlineStyle
 import org.kotlang.portfolio.style.HeroIntroStyle
 import org.kotlang.portfolio.style.HeroSubtitleStyle
+import org.kotlang.portfolio.theme.PrimaryButtonStyle
 import org.kotlang.portfolio.theme.ProfileImageStyle
 import org.kotlang.portfolio.util.Res
 
@@ -34,7 +32,7 @@ fun HeroSection() {
     val breakpoint = rememberBreakpoint()
     Box(
         modifier = Modifier
-            .id(HomeSection.Home.id)
+            .id(HomeSection.Hero.id)
             .fillMaxWidth()
             .padding(topBottom = 100.px),
         contentAlignment = Alignment.Center
@@ -75,7 +73,7 @@ fun HeroSection() {
 @Composable
 private fun ProfileImage() {
     Image(
-        src = Res.Image.profile,
+        src = Res.Image.PROFILE,
         alt = "Mohammad Arif Profile Picture",
         modifier = ProfileImageStyle.toModifier().size(250.px)
     )
@@ -100,14 +98,10 @@ private fun MainContent() {
             text = "I'm an Android developer with two years of experience, specializing in building modern, user-centric applications. I also run a YouTube channel where I share tutorials to help other developers grow their skills.",
             modifier = HeroDescriptionStyle.toModifier()
         )
-        Button(
-            onClick = {}
-        ) {
-            Link(
-                modifier = Modifier.color(Colors.White).textDecorationLine(TextDecorationLine.None),
-                text = "Hire me",
-                path = HomeSection.Contact.path
-            )
-        }
+        Link(
+            path = HomeSection.Contact.path,
+            text = "Get in Touch",
+            modifier = PrimaryButtonStyle.toModifier()
+        )
     }
 }

@@ -29,7 +29,7 @@ fun HomePageHeader() {
     BaseHeader(
         leftContent = {
             Link(
-                path = "/",
+                path = HomeSection.Hero.path,
                 text = "Mohammad Arif",
                 modifier = Modifier
                     .fontWeight(FontWeight.Bold)

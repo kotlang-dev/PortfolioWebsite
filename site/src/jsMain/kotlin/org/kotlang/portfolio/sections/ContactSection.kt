@@ -14,6 +14,7 @@ import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.kotlang.portfolio.components.SectionTitle
 import org.kotlang.portfolio.components.widgets.SocialIcon
 import org.kotlang.portfolio.models.HomeSection
 
@@ -31,13 +32,7 @@ fun ContactSection() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(24.px)
         ) {
-            SpanText(
-                text = "Get In Touch",
-                modifier = Modifier
-                    .fontSize(32.px)
-                    .fontWeight(FontWeight.Bold)
-                    .textAlign(TextAlign.Center)
-            )
+            SectionTitle(section = HomeSection.Contact)
 
             SpanText(
                 text = "I'm currently available for freelance work and open to discussing new projects.",

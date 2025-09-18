@@ -4,7 +4,8 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 
 object Res {
     object Image {
-        const val profile = "profile_image.jpg"
+        const val PROFILE = "profile_image.jpg"
+        const val APP_ICON = "app_icon.png"
     }
     object String {
         const val NAME = "Stefan Jovanovic"
