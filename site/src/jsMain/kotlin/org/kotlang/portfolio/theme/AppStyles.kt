@@ -7,7 +7,6 @@ import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.saturate
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
@@ -31,7 +30,6 @@ fun initStyles(ctx: InitSilkContext) {
                 "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif"
             )
             .fontSize(18.px)
-            .lineHeight(1.5)
     }
     ctx.apply {
         config.initialColorMode = ColorMode.loadFromLocalStorage() ?: ColorMode.systemPreference
@@ -72,7 +70,7 @@ val SocialBarBackdropStyle = CssStyle {
     base {
         Modifier
             .borderRadius(r = 20.px)
-            .backgroundColor(palette.surface)
+            .backgroundColor(palette.backgroundVariant)
     }
 }
 
@@ -88,25 +86,17 @@ val SocialLinkStyle = CssStyle {
 }
 
 val ProfileImageStyle = CssStyle {
+    val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
-            .borderRadius(14.px)
-            .transform { rotate((-2).deg) } // The slight tilt
-            .boxShadow( // The subtle shadow for depth
-                offsetX = 5.px,
-                offsetY = 5.px,
-                blurRadius = 15.px,
-                spreadRadius = 0.px,
-                color = Colors.Black.copyf(alpha = 0.2f)
-            )
-            .transition(Transition.of("transform", 0.3.s))
-    }
-    hover {
-        Modifier
-            .transform {
-                rotate(0.deg)
-                scale(1.05)
-            }
+            .width(280.px)
+            .height(320.px)
+            .position(Position.Relative)
+            .backgroundColor(palette.backgroundVariant)
+            .borderRadius(0.75.cssRem)
+            .top(1.cssRem)
+            .left(1.cssRem)
+            .fillMaxSize()
     }
 }
 

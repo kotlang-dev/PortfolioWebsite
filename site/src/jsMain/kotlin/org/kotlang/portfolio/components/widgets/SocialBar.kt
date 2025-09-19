@@ -8,12 +8,12 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.navigation.OpenLinkStrategy
 import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.toModifier
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.models.SocialLink
 import org.kotlang.portfolio.theme.SocialBarBackdropStyle
@@ -49,13 +49,20 @@ fun SocialBar(isRow: Boolean = false) {
 }
 
 @Composable
-private fun SocialLink(social: SocialLink) {
+private fun SocialLink(
+    social: SocialLink
+) {
+    val colorMode = ColorMode.current
+    val iconColor = when (colorMode) {
+        ColorMode.LIGHT -> social.lightColor
+        ColorMode.DARK -> social.darkColor
+    }
     Link(
         path = social.url,
         openExternalLinksStrategy = OpenLinkStrategy.IN_NEW_TAB,
         modifier = Modifier.textDecorationLine(TextDecorationLine.None),
     ) {
-        Box(SocialLinkStyle.toModifier().color(social.brandColor)) {
+        Box(SocialLinkStyle.toModifier().color(iconColor)) {
             social.icon(IconSize.LG)
         }
     }

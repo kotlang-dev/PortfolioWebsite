@@ -81,7 +81,9 @@ private fun ProfileImage() {
 
 @Composable
 private fun MainContent() {
-    Column(modifier = Modifier.margin(leftRight = 24.px)) {
+    Column(
+//        modifier = Modifier.margin(leftRight = 24.px)
+    ) {
         SpanText(
             text = "Hello, I'm",
             modifier = HeroIntroStyle.toModifier()
@@ -91,11 +93,11 @@ private fun MainContent() {
             modifier = HeroHeadlineStyle.toModifier()
         )
         SpanText(
-            text = "Android Developer | Kotlin Multiplatform Enthusiast",
+            text = "Kotlin & Android Developer | Content Creator",
             modifier = HeroSubtitleStyle.toModifier()
         )
         SpanText(
-            text = "I'm an Android developer with two years of experience, specializing in building modern, user-centric applications. I also run a YouTube channel where I share tutorials to help other developers grow their skills.",
+            text = "A Kotlin specialist with three years of experience crafting modern Android apps with Jetpack Compose. Passionate about the entire Kotlin ecosystem, including Kotlin Multiplatform. I also create educational content to empower the developer community.",
             modifier = HeroDescriptionStyle.toModifier()
         )
         Link(

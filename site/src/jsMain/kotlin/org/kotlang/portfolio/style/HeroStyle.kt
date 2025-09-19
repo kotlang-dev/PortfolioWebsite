@@ -27,14 +27,13 @@ val HeroIntroStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
-            .fontFamily("Roboto")
-            .fontSize(20.px)
+            .fontSize(16.px)
             .fontWeight(FontWeight.Normal)
-            .margin(topBottom = 0.px)
+            .margin(bottom = 10.px)
             .color(palette.primary)
     }
     Breakpoint.LG {
-        Modifier.fontSize(45.px)
+        Modifier.fontSize(24.px)
     }
 }
 
@@ -43,14 +42,12 @@ val HeroHeadlineStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
-            .fontFamily("Roboto")
-            .fontSize(40.px)
+            .fontSize(48.px)
             .fontWeight(FontWeight.Bolder)
-            .margin(top = 20.px, bottom = 0.px)
             .color(palette.text)
     }
     Breakpoint.LG {
-        Modifier.fontSize(68.px)
+        Modifier.fontSize(56.px)
     }
 }
 
@@ -59,14 +56,12 @@ val HeroSubtitleStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
-            .fontFamily("Roboto")
-            .fontSize(18.px)
+            .fontSize(14.px)
             .fontWeight(FontWeight.Bold)
-            .margin(top = 10.px, bottom = 5.px)
-            .color(palette.text)
+            .color(palette.primary)
     }
     Breakpoint.LG {
-        Modifier.fontSize(20.px)
+        Modifier.fontSize(18.px)
     }
 }
 
@@ -75,12 +70,13 @@ val HeroDescriptionStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
-            .maxWidth(400.px)
-            .fontFamily("Roboto")
-            .fontSize(15.px)
-            .fontStyle(FontStyle.Italic)
-            .fontWeight(FontWeight.Normal)
-            .margin(bottom = 25.px)
+            .maxWidth(550.px)
+            .fontSize(14.px)
+            .margin(topBottom = 25.px)
+            .lineHeight(1.5)
             .color(palette.text)
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(18.px)
     }
 }
