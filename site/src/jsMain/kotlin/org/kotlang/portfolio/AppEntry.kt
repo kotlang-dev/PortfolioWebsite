@@ -2,7 +2,9 @@ package org.kotlang.portfolio
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import com.varabyte.kobweb.compose.css.ScrollBehavior
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxHeight
+import com.varabyte.kobweb.compose.ui.modifiers.scrollBehavior
 import com.varabyte.kobweb.core.App
 import com.varabyte.kobweb.silk.SilkApp
 import com.varabyte.kobweb.silk.components.layout.Surface
@@ -20,7 +22,11 @@ fun AppEntry(content: @Composable () -> Unit) {
             colorMode.saveToLocalStorage()
         }
 
-        Surface(SmoothColorStyle.toModifier().fillMaxHeight()) {
+        Surface(
+            SmoothColorStyle.toModifier()
+                .scrollBehavior(ScrollBehavior.Smooth)
+                .fillMaxHeight()
+        ) {
             content()
         }
     }

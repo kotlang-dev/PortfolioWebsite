@@ -136,3 +136,23 @@ val ProfileImageStyle = CssStyle {
             }
     }
 }
+
+val FooterTextStyle = CssStyle {
+    val palette = colorMode.toPortfolioPalette()
+    base {
+        Modifier
+            .fontSize(14.px)
+            .color(palette.text.toRgb().copyf(alpha = 0.7f))
+    }
+
+    cssRule(" a") {
+        Modifier
+            .color(palette.primary)
+            .textDecorationLine(TextDecorationLine.None)
+            .transition(Transition.of("color", 200.ms))
+    }
+
+    cssRule(" a:hover") {
+        Modifier.textDecorationLine(TextDecorationLine.Underline)
+    }
+}

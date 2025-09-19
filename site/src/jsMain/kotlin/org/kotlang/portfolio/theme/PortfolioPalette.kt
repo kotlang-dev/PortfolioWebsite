@@ -9,7 +9,8 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 // These are the semantic names for the color roles in our app.
 class PortfolioPalette(
     val background: Color,
-    val surface: Color, // For slightly elevated surfaces
+    val backgroundVariant: Color,
+    val surface: Color,
     val header: Color,
     val primary: Color,
     val text: Color,
@@ -20,6 +21,7 @@ class PortfolioPalette(
 object PortfolioPalettes {
     val light = PortfolioPalette(
         background = Colors.WhiteSmoke, //Color.rgb(0xFFFFFF),
+        backgroundVariant = Color.rgb(0xF1F1F1),
         surface = Color.rgb(0xF8F9FA),
         header = Colors.White.copyf(alpha = 0.85f),
         primary = Color.rgb(0x059669),
@@ -29,6 +31,7 @@ object PortfolioPalettes {
 
     val dark = PortfolioPalette(
         background = Color.rgb(15, 15, 25), //Color.rgb(0x18181B),
+        backgroundVariant = Color.rgb(0x0D0D0D),
         surface = Color.rgb(0x202023),
         header = Colors.Black.copyf(alpha = 0.85f),
         primary = Color.rgb(0x34D399),
