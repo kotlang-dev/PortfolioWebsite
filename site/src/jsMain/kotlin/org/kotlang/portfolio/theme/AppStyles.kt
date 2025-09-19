@@ -1,6 +1,7 @@
 package org.kotlang.portfolio.theme
 
 import com.varabyte.kobweb.compose.css.Cursor
+import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.functions.blur
@@ -13,6 +14,7 @@ import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.init.registerStyleBase
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.style.selectors.visited
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.loadFromLocalStorage
 import com.varabyte.kobweb.silk.theme.colors.palette.border
@@ -33,26 +35,6 @@ fun initStyles(ctx: InitSilkContext) {
     }
     ctx.apply {
         config.initialColorMode = ColorMode.loadFromLocalStorage() ?: ColorMode.systemPreference
-
-        /*theme.palettes.apply {
-            light.apply {
-                color = PortfolioPalettes.light.text
-                background = PortfolioPalettes.light.background
-                border = Colors.DarkSlateGray
-                link.visited = ctx.theme.palettes.light.link.default
-            }
-
-            dark.apply {
-                color = PortfolioPalettes.dark.text
-                background = PortfolioPalettes.dark.background
-                border = Colors.LightSlateGray
-                link.apply {
-                    val linkDark = Color.rgb(0x1a85ff)
-                    default = linkDark
-                    visited = linkDark
-                }
-            }
-        }*/
     }
 }
 
@@ -62,7 +44,7 @@ val HeaderStyle = CssStyle {
         Modifier
             .fillMaxWidth()
             .background(palette.header)
-            .padding(topBottom = 10.px)
+            .padding(topBottom = 12.px)
             .position(Position.Sticky)
             .top(0.px)
             .zIndex(1)
@@ -78,19 +60,10 @@ val MainNavigationLinkStyle = CssStyle {
             .color(palette.text)
             .textDecorationLine(TextDecorationLine.None)
             .position(Position.Relative)
-            .transition(Transition.of("color", duration = 0.2.s),)
+            .transition(Transition.of("color", duration = 0.2.s))
     }
     hover {
         Modifier.color(palette.primary)
-    }
-}
-
-val ProjectNavigationLinkStyle = CssStyle {
-    base {
-        Modifier.textDecorationLine(TextDecorationLine.None)
-    }
-    hover {
-        Modifier.textDecorationLine(TextDecorationLine.Underline)
     }
 }
 
@@ -154,5 +127,22 @@ val FooterTextStyle = CssStyle {
 
     cssRule(" a:hover") {
         Modifier.textDecorationLine(TextDecorationLine.Underline)
+    }
+}
+
+val SubtleLinkStyle = CssStyle {
+    val palette = colorMode.toPortfolioPalette()
+    base {
+        Modifier
+            .color(palette.text)
+            .textDecorationLine(TextDecorationLine.None)
+            .fontWeight(FontWeight.SemiBold)
+            .transition(Transition.of("color", 200.ms))
+    }
+    hover {
+        Modifier.color(palette.primary)
+    }
+    visited {
+        Modifier.color(palette.text)
     }
 }

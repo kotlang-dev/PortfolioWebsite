@@ -8,9 +8,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.framework.annotations.DelicateApi
-import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
-import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.widgets.ThemeSwitchButton
@@ -22,13 +20,12 @@ fun BaseHeader(
     leftContent: @Composable () -> Unit,
     rightContent: @Composable () -> Unit
 ) {
-    val breakpoint = rememberBreakpoint()
     Box(
         modifier = HeaderStyle.toModifier(),
         contentAlignment = Alignment.Center
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(if (breakpoint > Breakpoint.SM) 80.percent else 90.percent),
+            modifier = Modifier.fillMaxWidth(90.percent),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {

@@ -19,15 +19,15 @@ import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.PageLayout
 import org.kotlang.portfolio.components.widgets.FeatureCard
 import org.kotlang.portfolio.sections.ProjectPageHeader
+import org.kotlang.portfolio.util.Res
 
-@Page("quiz-time")
+@Page("whiteboard")
 @Composable
-fun QuizTimePage() {
+fun WhiteboardPage() {
     PageLayout(
         header = {
             ProjectPageHeader(
-                githubLink = "https://github.com/kotlang-dev/AgeCalculator-TrackDates",
-                playStoreLink = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
+                githubLink = Res.Link.WHITEBOARD_GITHUB
             )
         }
     ) {
@@ -41,15 +41,15 @@ fun QuizTimePage() {
                 verticalArrangement = Arrangement.spacedBy(40.px)
             ) {
                 Image(
-                    src = "https://github.com/kotlang-dev/QuizTime/blob/main/readme-assets/QuizTime-Thumbnail.png?raw=true",
-                    alt = "QuizTime App Banner",
+                    src = "https://github.com/kotlang-dev/MeasureMate/blob/master/readme-assets/YoutubeThumbnail.png?raw=true",
+                    alt = "MeasureMate App Banner",
                     modifier = Modifier.fillMaxWidth().borderRadius(12.px)
                 )
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.px)) {
-                    SpanText("QuizTime App", modifier = Modifier.fontSize(32.px).fontWeight(FontWeight.Bold).textAlign(TextAlign.Center))
+                    SpanText("MeasureMate Android App", modifier = Modifier.fontSize(32.px).fontWeight(FontWeight.Bold).textAlign(TextAlign.Center))
                     SpanText(
-                        "A full-stack quiz application featuring a Ktor backend and a Jetpack Compose UI for Android, developed as part of a premium Udemy course.",
+                        "A comprehensive fitness tracking app built with Jetpack Compose and Firebase, created as part of a premium Udemy course.",
                         modifier = Modifier.textAlign(TextAlign.Center).opacity(80.percent)
                     )
                 }
@@ -58,12 +58,12 @@ fun QuizTimePage() {
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(24.px)) {
                     SpanText("Tech Stack", modifier = Modifier.fontSize(28.px).fontWeight(FontWeight.Bold))
                     SimpleGrid(numColumns(base = 1, md = 2), modifier = Modifier.gap(24.px)) {
-                        FeatureCard("Ktor (Backend)", "To build the server-side application and APIs.")
-                        FeatureCard("Jetpack Compose", "To build the native User Interface for Android.")
+                        FeatureCard("Jetpack Compose", "To build the User Interface.")
                         FeatureCard("Material 3", "To design a beautiful and consistent UI.")
-                        FeatureCard("Coroutines & Flow", "For handling asynchronous operations.")
+                        FeatureCard("Firebase Authentication", "To securely manage user sign-ins, including Google Sign-In.")
+                        FeatureCard("Firebase Firestore", "To store, sync, and query data in real-time.")
                         FeatureCard("Dagger Hilt", "To manage dependency injection for cleaner, modular code.")
-                        FeatureCard("Retrofit", "For type-safe HTTP client communication.")
+                        FeatureCard("Compose Navigation", "To navigate between screens seamlessly.")
                     }
                 }
             }

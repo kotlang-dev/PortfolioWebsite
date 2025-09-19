@@ -19,6 +19,7 @@ import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.PageLayout
 import org.kotlang.portfolio.components.widgets.FeatureCard
 import org.kotlang.portfolio.sections.ProjectPageHeader
+import org.kotlang.portfolio.util.Res
 
 @Page("age-calculator")
 @Composable
@@ -26,8 +27,8 @@ fun AgeCalculatorPage() {
     PageLayout(
         header = {
             ProjectPageHeader(
-                githubLink = "https://github.com/kotlang-dev/AgeCalculator-TrackDates",
-                playStoreLink = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
+                githubLink = Res.Link.AGE_CALC_GITHUB,
+                playStoreLink = Res.Link.AGE_CALC_PLAYSTORE
             )
         }
     ) {

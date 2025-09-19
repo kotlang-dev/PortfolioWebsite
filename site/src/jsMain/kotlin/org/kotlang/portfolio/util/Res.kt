@@ -49,4 +49,14 @@ object Res {
         const val ICON_SIZE = 24
         const val ICON_SIZE_LG = 32
     }
+
+    object Link {
+        const val MEASUREMATE_GITHUB = "https://github.com/kotlang-dev/MeasureMate"
+        const val MEASUREMATE_COURSE = "https://www.udemy.com/course/measuremate/?referralCode=B3DE352F96BC3C3E9E80"
+        const val QUIZTIME_GITHUB = "https://github.com/kotlang-dev/QuizTime"
+        const val QUIZTIME_COURSE = "https://www.udemy.com/course/quiztime/learn/?referralCode=D1F5E08155303110B7A4"
+        const val AGE_CALC_GITHUB = "https://github.com/kotlang-dev/AgeCalculator-TrackDates"
+        const val AGE_CALC_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
+        const val WHITEBOARD_GITHUB = "https://github.com/kotlang-dev/Whiteboard_CMP"
+    }
 }

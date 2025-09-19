@@ -20,15 +20,12 @@ import org.kotlang.portfolio.components.PageLayout
 import org.kotlang.portfolio.components.widgets.FeatureCard
 import org.kotlang.portfolio.sections.ProjectPageHeader
 
-@Page("measure-mate")
+@Page("kinex")
 @Composable
-fun MeasureMatePage() {
+fun KinexPage() {
     PageLayout(
         header = {
-            ProjectPageHeader(
-                githubLink = "https://github.com/kotlang-dev/AgeCalculator-TrackDates",
-                playStoreLink = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
-            )
+            ProjectPageHeader()
         }
     ) {
         Box(

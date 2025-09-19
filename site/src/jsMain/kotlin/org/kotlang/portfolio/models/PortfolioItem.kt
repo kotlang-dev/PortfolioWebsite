@@ -21,16 +21,16 @@ object PortfolioData {
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON,
-            title = "QuizTime App",
+            title = "Kinex - Gym Workouts",
             description = "A full-stack quiz app with a Ktor backend and a Jetpack Compose client.",
-            link = "/projects/quiz-time",
+            link = "/projects/kinex",
             tags = listOf("Ktor", "Jetpack Compose", "Coroutines", "SQLDelight")
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON,
-            title = "MeasureMate App",
+            title = "Whiteboard",
             description = "A fitness tracking app built with Jetpack Compose and Firebase.",
-            link = "/projects/measure-mate",
+            link = "/projects/whiteboard",
             tags = listOf("Firebase", "Jetpack Compose", "Dagger Hilt", "MVVM")
         )
     )
@@ -40,14 +40,14 @@ object PortfolioData {
             icon = Res.Image.APP_ICON,
             title = "Android Quiz App",
             description = "Learn to build a full-stack Android app from scratch with modern technologies.",
-            link = "/courses/quiz-app",
+            link = "/courses/quiz-time",
             tags = listOf("Ktor Backend", "Jetpack Compose", "MVVM", "REST API")
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON,
             title = "Android Fitness App",
             description = "Build a complete fitness app and master Firebase integration with Jetpack Compose.",
-            link = "/courses/fitness-app",
+            link = "/courses/measure-mate",
             tags = listOf("Firebase", "Jetpack Compose", "Authentication", "Firestore")
         )
     )
