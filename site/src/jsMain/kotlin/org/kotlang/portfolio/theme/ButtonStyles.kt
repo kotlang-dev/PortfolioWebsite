@@ -12,6 +12,7 @@ import com.varabyte.kobweb.silk.style.selectors.hover
 import com.varabyte.kobweb.silk.style.selectors.visited
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.ms
+import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
 
@@ -53,7 +54,7 @@ val PrimaryButtonStyle = CssStyle {
     }
 }
 
-val PlayStoreButtonStyle = CssStyle {
+val HeaderPrimaryButtonStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
@@ -73,7 +74,7 @@ val PlayStoreButtonStyle = CssStyle {
     }
 }
 
-val GithubButtonStyle = CssStyle {
+val HeaderSecondaryButtonStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()
     base {
         Modifier
@@ -96,5 +97,24 @@ val GithubButtonStyle = CssStyle {
     }
     visited {
         Modifier.color(palette.text)
+    }
+}
+
+val HeaderIconButtonStyle = CssStyle {
+    val palette = colorMode.toPortfolioPalette()
+    base {
+        Modifier
+            .color(palette.text)
+            .borderRadius(100.percent)
+            .padding(8.px)
+            .transition(
+                Transition.of("background-color", 200.ms),
+                Transition.of("color", 200.ms)
+            )
+    }
+    hover {
+        Modifier
+            .backgroundColor(palette.primary)
+            .color(Colors.White)
     }
 }
