@@ -11,19 +11,26 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.layout.SimpleGrid
-import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.PageLayout
-import org.kotlang.portfolio.components.widgets.FeatureCard
+import org.kotlang.portfolio.components.sections.TechStackSection
+import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.sections.ProjectPageHeader
 import org.kotlang.portfolio.util.Res
 
 @Page("age-calculator")
 @Composable
 fun AgeCalculatorPage() {
+    val techStack = listOf(
+        TechStack.ComposeMultiplatform,
+        TechStack.RoomDB,
+        TechStack.PreferenceDataStore,
+        TechStack.KotlinxDateTime,
+        TechStack.Koin
+    )
+
     PageLayout(
         header = {
             ProjectPageHeader(
@@ -63,39 +70,7 @@ fun AgeCalculatorPage() {
                     )
                 }
 
-                // Features Section
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(24.px)
-                ) {
-                    SpanText("Key Features", modifier = Modifier.fontSize(28.px).fontWeight(FontWeight.Bold))
-                    SimpleGrid(numColumns(base = 1, md = 2), modifier = Modifier.gap(24.px)) {
-                        FeatureCard(
-                            "Multiplatform Support",
-                            "A single, shared codebase for Android, Windows, macOS, and Linux."
-                        )
-                        FeatureCard(
-                            "Adaptive UI",
-                            "The interface intelligently adapts to different screen sizes for phones, tablets, and desktops."
-                        )
-                        FeatureCard(
-                            "Track Key Life Events",
-                            "Add and manage multiple occasions like birthdays, anniversaries, and milestones."
-                        )
-                        FeatureCard(
-                            "Detailed Age Breakdown",
-                            "Instantly see the elapsed time in years, months, days, and even down to the second."
-                        )
-                        FeatureCard(
-                            "Dynamic Theming",
-                            "Personalize your experience by switching between Light, Dark, or System themes."
-                        )
-                        FeatureCard(
-                            "100% Offline & Private",
-                            "All data is stored securely on your device and is never collected or transmitted."
-                        )
-                    }
-                }
+                TechStackSection(techStack = techStack)
             }
         }
     }

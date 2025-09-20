@@ -11,19 +11,25 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.layout.SimpleGrid
-import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.PageLayout
-import org.kotlang.portfolio.components.widgets.FeatureCard
+import org.kotlang.portfolio.components.sections.TechStackSection
+import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.sections.ProjectPageHeader
 import org.kotlang.portfolio.util.Res
 
 @Page("whiteboard")
 @Composable
 fun WhiteboardPage() {
+    val techStack = listOf(
+        TechStack.ComposeMultiplatform,
+        TechStack.ComposeCanvas,
+        TechStack.RoomDB,
+        TechStack.Koin,
+        TechStack.PreferenceDataStore
+    )
     PageLayout(
         header = {
             ProjectPageHeader(
@@ -54,18 +60,7 @@ fun WhiteboardPage() {
                     )
                 }
 
-                // Tech Stack Section
-                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(24.px)) {
-                    SpanText("Tech Stack", modifier = Modifier.fontSize(28.px).fontWeight(FontWeight.Bold))
-                    SimpleGrid(numColumns(base = 1, md = 2), modifier = Modifier.gap(24.px)) {
-                        FeatureCard("Jetpack Compose", "To build the User Interface.")
-                        FeatureCard("Material 3", "To design a beautiful and consistent UI.")
-                        FeatureCard("Firebase Authentication", "To securely manage user sign-ins, including Google Sign-In.")
-                        FeatureCard("Firebase Firestore", "To store, sync, and query data in real-time.")
-                        FeatureCard("Dagger Hilt", "To manage dependency injection for cleaner, modular code.")
-                        FeatureCard("Compose Navigation", "To navigate between screens seamlessly.")
-                    }
-                }
+                TechStackSection(techStack)
             }
         }
     }

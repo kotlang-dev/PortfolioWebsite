@@ -2,6 +2,7 @@ package org.kotlang.portfolio.theme
 
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.ScrollBehavior
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.functions.blur
@@ -23,16 +24,24 @@ import org.jetbrains.compose.web.css.*
 
 @InitSilk
 fun initStyles(ctx: InitSilkContext) {
-    ctx.stylesheet.registerStyleBase("body") {
-        Modifier
-            .fontFamily(
-                "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-                "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif"
-            )
-            .fontSize(18.px)
-    }
     ctx.apply {
         config.initialColorMode = ColorMode.loadFromLocalStorage() ?: ColorMode.systemPreference
+
+        stylesheet.apply {
+
+            registerStyleBase("html") {
+                Modifier.scrollBehavior(ScrollBehavior.Smooth)
+            }
+
+            registerStyleBase("body") {
+                Modifier
+                    .fontFamily(
+                        "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+                        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif"
+                    )
+                    .fontSize(18.px)
+            }
+        }
     }
 }
 

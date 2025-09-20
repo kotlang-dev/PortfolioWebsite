@@ -32,7 +32,11 @@ fun CoursesSection() {
             modifier = SectionContainerStyle.toModifier().gap(60.px),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            SectionTitle(section = HomeSection.Courses)
+            SectionTitle(
+                title = HomeSection.Courses.title,
+                subtitle = HomeSection.Courses.subtitle,
+                sectionId = HomeSection.Courses.id
+            )
 
             Row(modifier = CardGridStyle.toModifier()) {
                 PortfolioData.courses.forEach { course ->
