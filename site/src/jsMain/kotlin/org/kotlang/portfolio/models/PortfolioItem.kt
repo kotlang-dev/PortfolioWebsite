@@ -16,21 +16,21 @@ object PortfolioData {
             icon = Res.Image.APP_ICON_AGE_CALC,
             title = "Age Calculator (KMP)",
             description = "A multiplatform app for Android & Desktop with a shared codebase using Compose.",
-            link = "/projects/age-calculator",
+            link = Routes.PROJECTS_AGE_CALCULATOR,
             tags = listOf("Compose Multiplatform", "Kotlinx DateTime", "Room DB", "Koin (DI)", "Pref DataStore")
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON_KINEX,
             title = "Kinex - Gym Workouts",
             description = "A full-stack quiz app with a Ktor backend and a Jetpack Compose client.",
-            link = "/projects/kinex",
+            link = Routes.PROJECTS_KINEX,
             tags = listOf("Ktor", "Jetpack Compose", "Coroutines", "SQLDelight")
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON_QUIZTIME,
             title = "Whiteboard",
             description = "A fitness tracking app built with Jetpack Compose and Firebase.",
-            link = "/projects/whiteboard",
+            link = Routes.PROJECTS_WHITEBOARD,
             tags = listOf("Firebase", "Jetpack Compose", "Dagger Hilt", "MVVM")
         )
     )
@@ -40,14 +40,14 @@ object PortfolioData {
             icon = Res.Image.APP_ICON_QUIZTIME,
             title = "Android Quiz App",
             description = "A full-stack, interactive quiz app for Android built entirely with Kotlin.",
-            link = "/courses/quiz-time",
+            link = Routes.COURSES_QUIZ_TIME,
             tags = listOf("Ktor Backend", "Jetpack Compose", "MongoDB", "Room", "Koin (DI)")
         ),
         PortfolioItem(
             icon = Res.Image.APP_ICON_MEASUREMATE,
             title = "Android Fitness App",
             description = "A fitness tracking app built with Jetpack Compose and Firebase.",
-            link = "/courses/measure-mate",
+            link = Routes.COURSES_MEASURE_MATE,
             tags = listOf("Firebase", "Jetpack Compose", "Dagger Hilt (DI)", "Compose Navigation")
         )
     )

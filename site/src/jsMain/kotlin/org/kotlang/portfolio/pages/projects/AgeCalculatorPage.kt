@@ -16,11 +16,12 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.PageLayout
 import org.kotlang.portfolio.components.sections.TechStackSection
+import org.kotlang.portfolio.models.Routes
 import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.sections.ProjectPageHeader
 import org.kotlang.portfolio.util.Res
 
-@Page("age-calc")
+@Page(Routes.PROJECTS_AGE_CALCULATOR)
 @Composable
 fun AgeCalculatorPage() {
     val techStack = listOf(
