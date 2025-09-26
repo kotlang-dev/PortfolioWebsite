@@ -20,7 +20,7 @@ import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.sections.ProjectPageHeader
 import org.kotlang.portfolio.util.Res
 
-@Page("age-calculator")
+@Page("age-calc")
 @Composable
 fun AgeCalculatorPage() {
     val techStack = listOf(
@@ -30,6 +30,14 @@ fun AgeCalculatorPage() {
         TechStack.KotlinxDateTime,
         TechStack.Koin
     )
+
+    //TODO update these info on every page
+    /*LaunchedEffect(Unit) {
+        setPageMetadata(
+            title = "Age Calculator (KMP) - Mohammad Arif",
+            description = "A multiplatform app for Android & Desktop with a shared codebase using Compose."
+        )
+    }*/
 
     PageLayout(
         header = {

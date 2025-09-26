@@ -93,7 +93,7 @@ private fun MainContent() {
             modifier = HeroHeadlineStyle.toModifier()
         )
         SpanText(
-            text = "Kotlin & Android Developer | Content Creator",
+            text = "Android & Kotlin Multiplatform Developer | Content Creator",
             modifier = HeroSubtitleStyle.toModifier()
         )
         SpanText(
