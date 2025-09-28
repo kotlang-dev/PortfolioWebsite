@@ -13,13 +13,6 @@ data class PortfolioItem(
 object PortfolioData {
     val projects = listOf(
         PortfolioItem(
-            icon = Res.Image.APP_ICON_AGE_CALC,
-            title = "Age Calculator (KMP)",
-            description = "A multiplatform app for Android & Desktop with a shared codebase using Compose.",
-            link = Routes.PROJECTS_AGE_CALCULATOR,
-            tags = listOf("Compose Multiplatform", "Kotlinx DateTime", "Room DB", "Koin (DI)", "Pref DataStore")
-        ),
-        PortfolioItem(
             icon = Res.Image.APP_ICON_KINEX,
             title = "Kinex - Gym Workouts",
             description = "A full-stack quiz app with a Ktor backend and a Jetpack Compose client.",
@@ -27,11 +20,11 @@ object PortfolioData {
             tags = listOf("Ktor", "Jetpack Compose", "Coroutines", "SQLDelight")
         ),
         PortfolioItem(
-            icon = Res.Image.APP_ICON_QUIZTIME,
-            title = "Whiteboard",
-            description = "A fitness tracking app built with Jetpack Compose and Firebase.",
-            link = Routes.PROJECTS_WHITEBOARD,
-            tags = listOf("Firebase", "Jetpack Compose", "Dagger Hilt", "MVVM")
+            icon = Res.Image.APP_ICON_AGE_CALC,
+            title = "Age Calculator (KMP)",
+            description = "A multiplatform app for Android & Desktop with a shared codebase using Compose.",
+            link = Routes.PROJECTS_AGE_CALCULATOR,
+            tags = listOf("Compose Multiplatform", "Kotlinx DateTime", "Room DB", "Koin (DI)", "Pref DataStore")
         )
     )
 

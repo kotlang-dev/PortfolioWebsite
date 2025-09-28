@@ -33,6 +33,7 @@ object Res {
         const val SUN = "sun.svg"
         const val MOON = "moon.svg"
     }
+    //TODO remove it
     enum class Theme(val color: Color) {
         BLUE(color = Color.rgb(r = 33, g = 150, b = 243)),
         LIGHT_BLUE(color = Color.rgb(r = 168, g = 236, b = 255)),
@@ -60,6 +61,5 @@ object Res {
         const val QUIZTIME_COURSE = "https://www.udemy.com/course/quiztime/learn/?referralCode=D1F5E08155303110B7A4"
         const val AGE_CALC_GITHUB = "https://github.com/kotlang-dev/AgeCalculator-TrackDates"
         const val AGE_CALC_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
-        const val WHITEBOARD_GITHUB = "https://github.com/kotlang-dev/Whiteboard_CMP"
     }
 }
