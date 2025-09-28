@@ -54,7 +54,7 @@ val HeaderStyle = CssStyle {
             .padding(topBottom = 12.px)
             .position(Position.Sticky)
             .top(0.px)
-            .zIndex(1)
+            .zIndex(10)
             .backdropFilter(saturate(180.percent), blur(5.px))
             .borderBottom(width = 1.px, style = LineStyle.Solid, color = colorMode.toPalette().border)
     }

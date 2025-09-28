@@ -92,7 +92,7 @@ val HeaderSecondaryButtonStyle = CssStyle {
     }
     hover {
         Modifier
-            .backgroundColor(palette.primary)
+            .backgroundColor(palette.primary.darkened(0.1f))
             .color(palette.background)
     }
     visited {

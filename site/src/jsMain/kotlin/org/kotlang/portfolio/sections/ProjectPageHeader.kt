@@ -46,12 +46,8 @@ fun ProjectPageHeader(
             }
         },
         rightContent = {
-            val primaryButtonStyle = if (breakpoint >= Breakpoint.MD) {
-                HeaderPrimaryButtonStyle
-            } else HeaderIconButtonStyle
-            val secondaryButtonStyle = if (breakpoint >= Breakpoint.MD) {
-                HeaderSecondaryButtonStyle
-            } else HeaderIconButtonStyle
+            val primaryButtonStyle = if (breakpoint >= Breakpoint.MD) HeaderPrimaryButtonStyle else HeaderIconButtonStyle
+            val secondaryButtonStyle = if (breakpoint >= Breakpoint.MD) HeaderSecondaryButtonStyle else HeaderIconButtonStyle
 
             Row(
                 verticalAlignment = Alignment.CenterVertically,

@@ -1,4 +1,4 @@
-package org.kotlang.portfolio.components
+package org.kotlang.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.Cursor

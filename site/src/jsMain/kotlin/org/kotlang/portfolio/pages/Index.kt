@@ -7,7 +7,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.flexGrow
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.core.Page
 import org.jetbrains.compose.web.css.px
-import org.kotlang.portfolio.components.PageLayout
+import org.kotlang.portfolio.components.layout.PageLayout
 import org.kotlang.portfolio.sections.*
 
 @Page

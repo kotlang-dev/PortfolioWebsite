@@ -12,7 +12,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
-import org.kotlang.portfolio.components.SectionTitle
+import org.kotlang.portfolio.components.sections.SectionTitle
 import org.kotlang.portfolio.components.widgets.PortfolioCard
 import org.kotlang.portfolio.models.HomeSection
 import org.kotlang.portfolio.models.PortfolioData

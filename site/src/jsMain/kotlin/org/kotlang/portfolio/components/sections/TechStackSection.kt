@@ -7,7 +7,6 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
-import org.kotlang.portfolio.components.SectionTitle
 import org.kotlang.portfolio.components.widgets.TechStackCard
 import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.theme.CardGridStyle

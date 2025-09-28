@@ -1,6 +1,7 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
 import kotlinx.html.meta
+import kotlinx.html.script
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -19,7 +20,10 @@ kobweb {
 
             head.add {
                 meta(name = "og:title", content = "Mohammad Arif - Android & Kotlin Multiplatform Developer")
-                meta(name = "og:description", content = "A portfolio showcasing modern Android and Kotlin Multiplatform projects and courses.")
+                meta(
+                    name = "og:description",
+                    content = "A portfolio showcasing modern Android and Kotlin Multiplatform projects and courses."
+                )
                 meta(name = "og:image", content = "https://kotlang.dev/og_image.png")
                 meta(name = "og:url", content = "https://kotlang.dev")
                 meta(name = "og:type", content = "website")
@@ -30,6 +34,10 @@ kobweb {
 
                 // Link to the Web App Manifest
                 link(rel = "manifest", href = "/site.webmanifest")
+
+                //Swiper
+                link(rel = "stylesheet", href = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css")
+                script { src = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" }
             }
         }
     }
