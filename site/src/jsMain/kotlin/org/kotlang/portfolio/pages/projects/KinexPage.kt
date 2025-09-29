@@ -16,7 +16,7 @@ fun KinexPage() {
     ProjectShowcaseLayout(
         pageTitle = "Kinex - Gym Workout Guide",
         pageDescription = "Kinex is a modern, offline-first android application, built entirely with Kotlin and Jetpack Compose",
-        playStoreLink = Res.Link.AGE_CALC_PLAYSTORE, //TODO update this link
+        playStoreLink = Res.Link.KINEX_PLAYSTORE,
         coverImage = "/projects/kinex/cover.jpeg",
         screenshots = listOf(
             "/projects/kinex/screenshot_01.png",

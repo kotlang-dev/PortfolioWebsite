@@ -1,7 +1,6 @@
 package org.kotlang.portfolio.sections
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -9,16 +8,20 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.gap
 import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.textAlign
-import com.varabyte.kobweb.silk.components.icons.fa.*
+import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.text.SpanText
-import org.jetbrains.compose.web.css.percent
+import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.sections.SectionTitle
-import org.kotlang.portfolio.components.widgets.SocialIcon
+import org.kotlang.portfolio.components.widgets.SocialLink
 import org.kotlang.portfolio.models.HomeSection
+import org.kotlang.portfolio.models.SocialLink
+import org.kotlang.portfolio.theme.ContactTextStyle
+import org.kotlang.portfolio.theme.EmailLinkStyle
+import org.kotlang.portfolio.theme.SectionContainerStyle
 
 @Composable
 fun ContactSection() {
@@ -30,9 +33,8 @@ fun ContactSection() {
         contentAlignment = Alignment.Center
     ) {
         Column(
-            modifier = Modifier.fillMaxWidth(90.percent),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(24.px)
+            modifier = SectionContainerStyle.toModifier().gap(40.px),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SectionTitle(
                 title = HomeSection.Contact.title,
@@ -40,19 +42,26 @@ fun ContactSection() {
                 sectionId = HomeSection.Contact.id
             )
 
-            SpanText(
-                text = "I'm currently available for freelance work and open to discussing new projects.",
-                modifier = Modifier.textAlign(TextAlign.Center)
-            )
-
+            Column(
+                modifier = Modifier.gap(24.px),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                SpanText(
+                    text = "I'm currently open to new opportunities and freelance projects. Feel free to reach out!",
+                    modifier = ContactTextStyle.toModifier()
+                )
+                Link(
+                    path = "mailto:ursmohammadarif@gmail.com",
+                    text = "ursmohammadarif@gmail.com",
+                    modifier = EmailLinkStyle.toModifier()
+                )
+            }
             Row(
                 horizontalArrangement = Arrangement.spacedBy(16.px)
             ) {
-                SocialIcon(href = "https://www.youtube.com/@kotlang") { FaYoutube(size = IconSize.LG) }
-                SocialIcon(href = "https://github.com/kotlang-dev") { FaGithub(size = IconSize.LG) }
-                SocialIcon(href = "https://www.linkedin.com/in/mohammadarif-dev/") { FaLinkedin(size = IconSize.LG) }
-                SocialIcon(href = "https://www.instagram.com/kotlang.dev/") { FaInstagram(size = IconSize.LG) }
-                SocialIcon(href = "#") { FaDiscord(size = IconSize.LG) } //TODO Replace # with your Discord link
+                SocialLink.entries.forEach { social ->
+                    SocialLink(social)
+                }
             }
         }
     }

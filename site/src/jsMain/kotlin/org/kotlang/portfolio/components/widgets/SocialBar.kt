@@ -49,7 +49,7 @@ fun SocialBar(isRow: Boolean = false) {
 }
 
 @Composable
-private fun SocialLink(
+fun SocialLink(
     social: SocialLink
 ) {
     val colorMode = ColorMode.current

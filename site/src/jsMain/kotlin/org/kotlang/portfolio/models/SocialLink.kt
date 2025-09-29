@@ -7,6 +7,7 @@ import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
 import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedin
 import com.varabyte.kobweb.silk.components.icons.fa.FaYoutube
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
+import org.kotlang.portfolio.util.Res
 
 enum class SocialLink(
     val icon: @Composable (IconSize) -> Unit,
@@ -16,25 +17,25 @@ enum class SocialLink(
 ) {
     Github(
         icon = { FaGithub(size = it) },
-        url = "https://github.com/kotlang-dev",
+        url = Res.Link.GITHUB,
         lightColor = Color.rgb(0x000000),
         darkColor = Color.rgb(0xFFFFFF),
     ),
     Youtube(
         icon = { FaYoutube(size = it) },
-        url = "https://www.youtube.com/@kotlang",
+        url = Res.Link.YOUTUBE,
         lightColor = Color.rgb(0xFF0000),
         darkColor = Color.rgb(0xFF4D4D),
     ),
     Linkedin(
         icon = { FaLinkedin(size = it) },
-        url = "https://www.linkedin.com/in/mohammad-arif-5371a3253/",
+        url = Res.Link.LINKEDIN,
         lightColor = Color.rgb(0x0A66C2),
         darkColor = Color.rgb(0x3B82F6),
     ),
     Discord(
         icon = { FaDiscord(size = it) },
-        url = "https://discord.gg/your-invite",
+        url = Res.Link.DISCORD,
         lightColor = Color.rgb(0x5865F2),
         darkColor = Color.rgb(0x7C86F9),
     )

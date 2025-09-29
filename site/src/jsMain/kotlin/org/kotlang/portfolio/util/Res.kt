@@ -61,5 +61,11 @@ object Res {
         const val QUIZTIME_COURSE = "https://www.udemy.com/course/quiztime/learn/?referralCode=D1F5E08155303110B7A4"
         const val AGE_CALC_GITHUB = "https://github.com/kotlang-dev/AgeCalculator-TrackDates"
         const val AGE_CALC_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.synac.agecalculator"
+        const val KINEX_PLAYSTORE = "https://play.google.com/store/apps/details?id=com.synac.kinex"
+
+        const val YOUTUBE = "https://www.youtube.com/@kotlang"
+        const val GITHUB = "https://github.com/kotlang-dev"
+        const val LINKEDIN = "https://www.linkedin.com/in/kotlang/"
+        const val DISCORD = "https://discord.com/invite/mwTnZKHaVt"
     }
 }
