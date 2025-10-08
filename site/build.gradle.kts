@@ -41,6 +41,9 @@ kobweb {
             }
         }
     }
+    markdown {
+        defaultLayout.set("org.kotlang.portfolio.components.layouts.MarkdownLayout")
+    }
 }
 
 kotlin {

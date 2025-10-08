@@ -1,4 +1,4 @@
-package org.kotlang.portfolio.style
+package org.kotlang.portfolio.theme
 
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.ui.Modifier

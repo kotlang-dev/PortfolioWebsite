@@ -18,10 +18,10 @@ import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.components.widgets.SocialBar
 import org.kotlang.portfolio.models.HomeSection
-import org.kotlang.portfolio.style.HeroDescriptionStyle
-import org.kotlang.portfolio.style.HeroHeadlineStyle
-import org.kotlang.portfolio.style.HeroIntroStyle
-import org.kotlang.portfolio.style.HeroSubtitleStyle
+import org.kotlang.portfolio.theme.HeroDescriptionStyle
+import org.kotlang.portfolio.theme.HeroHeadlineStyle
+import org.kotlang.portfolio.theme.HeroIntroStyle
+import org.kotlang.portfolio.theme.HeroSubtitleStyle
 import org.kotlang.portfolio.theme.PrimaryButtonStyle
 import org.kotlang.portfolio.theme.ProfileImageStyle
 import org.kotlang.portfolio.util.Res

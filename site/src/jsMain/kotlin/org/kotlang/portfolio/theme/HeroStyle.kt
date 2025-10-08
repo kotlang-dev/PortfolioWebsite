@@ -1,4 +1,4 @@
-package org.kotlang.portfolio.style
+package org.kotlang.portfolio.theme
 
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -7,7 +7,6 @@ import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
-import org.kotlang.portfolio.theme.toPortfolioPalette
 
 val MainButtonStyle = CssStyle {
     val palette = colorMode.toPortfolioPalette()

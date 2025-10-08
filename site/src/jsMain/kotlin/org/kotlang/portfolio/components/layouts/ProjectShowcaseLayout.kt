@@ -1,4 +1,4 @@
-package org.kotlang.portfolio.components.layout
+package org.kotlang.portfolio.components.layouts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

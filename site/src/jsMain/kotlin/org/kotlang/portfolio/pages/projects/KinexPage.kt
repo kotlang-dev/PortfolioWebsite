@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
-import org.kotlang.portfolio.components.layout.ProjectShowcaseLayout
+import org.kotlang.portfolio.components.layouts.ProjectShowcaseLayout
 import org.kotlang.portfolio.models.Routes
 import org.kotlang.portfolio.models.TechStack
 import org.kotlang.portfolio.theme.ShowcaseDescriptionStyle
