@@ -16,6 +16,7 @@ import com.varabyte.kobweb.core.layout.Layout
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.window
+import kotlinx.coroutines.delay
 import org.jetbrains.compose.web.css.px
 import org.kotlang.portfolio.theme.MarkdownStyle
 import org.kotlang.portfolio.util.setPageMetadata
@@ -28,6 +29,7 @@ fun MarkdownLayout(ctx: PageContext, content: @Composable () -> Unit) {
     var colorMode by ColorMode.currentState
 
     LaunchedEffect(ctx.route) {
+        delay(100)
         val theme = window.location.search.let {
             val params = URLSearchParams(it)
             params.get("theme")
